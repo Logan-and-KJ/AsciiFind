@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+html, body {
+    background: #000;
+    color: #fff;
+    font-family: 'Times New Roman';
+    font-size: 13pt;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#simulation {
+    width: 75vw;
+    background: #112233;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+table {
+    border: 2px solid #444455;
+}
+table tr:nth-child(odd) {
+    background: #223344
+}
+table tr td {
+    padding: .2em;
+}
+
+input[type="number"] {
+    padding: .5em;
+    outline: none;
+    background: #444455;
+    border: 2px solid transparent;
+    color: white;
+}
+input[type="number"]:hover {
+    border-color: #4a4a9a;
+}
+
+.mono {
+    font-family: 'Fira Code', monospace, arial;
+}
+.text-left {
+    text-align: left;
+}
