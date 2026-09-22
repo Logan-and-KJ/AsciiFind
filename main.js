@@ -1,10 +1,15 @@
-let numCharacters = 5000;
 let characters = [];
-const NUM_TESTS = 70000;
+let numCharacters = 5000;
+let NUM_TESTS = 70000;
 let foundP = 0;
 let randChar = () => characters[Math.floor(Math.random() * characters.length)];
+let eConsole = document.getElementById("console")
 
-// Build character array (ASCII 33-124)
+document.getElementById("button").onclick = function() {
+let numCharacters = document.getElementById("num-chars").value;
+let NUM_TESTS = document.getElementById("num-tests").value;
+
+  // Build character array (ASCII 33-124)
 for(let i = 33; i < 125; i++) {
   characters.push({
     char: String.fromCharCode(i)
@@ -14,7 +19,7 @@ for(let i = 33; i < 125; i++) {
 // Test specific character range
 for(let z = 32; z < 92; z++) {
   let lookFor = characters[z].char;
-  console.log("Looking for: "+lookFor);
+  eConsole.innerHTML += "&gt; Looking for: "+lookFor + "<br>";
   function semi() {
     let semiCount = 0;
     let fullStr = "";
@@ -48,8 +53,10 @@ for(let z = 32; z < 92; z++) {
     // This gives the true probability/proportion
     foundP = (percentTotal / NUM_TESTS) / numCharacters;
     console.log(`${100 * foundP}%`);
+    eConsole.innerHTML += `${100 * foundP}%&nbsp;`
   }
   main();
+}
 }
 
 // Fixed final average calculation - remove redundant NUM_TESTS division
