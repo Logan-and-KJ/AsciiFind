@@ -177,7 +177,7 @@ For a uniform random distribution across 92 ASCII characters (33-124):
 
 ## Credits
 
-Simulation methodology developed by Logan Webb and contributors.
+Simulation methodology developed by Logan Webb and KJ Houser.
 
 ## License
 
