@@ -1,4 +1,4 @@
-###### AsciiFind
+# AsciiFind
 
 A statistical simulation tool that calculates the approximate probability of
 specific ASCII characters appearing in randomly generated strings.
@@ -19,22 +19,22 @@ theoretical probability with empirical results across multiple test iterations.
 
 ## Project Structure
 
-  | File       | Purpose                            | Environment    |
-  | ---------- | ---------------------------------- | -------------- |
-  | cli.js     | Node.js command-line interface     | ⭐ Recommended |
-  | index.html | Browser interface HTML structure   | Browser        |
-  | main.js    | Browser interface JavaScript logic | Browser        |
-  | style.css  | Styling for browser interface      | Browser        |
-  | README.md  | Project documentation              | N/A            |
+| File       | Purpose                            | Environment    |
+| ---------- | ---------------------------------- | -------------- |
+| cli.js     | Node.js command-line interface     | ⭐ Recommended |
+| index.html | Browser interface HTML structure   | Browser        |
+| main.js    | Browser interface JavaScript logic | Browser        |
+| style.css  | Styling for browser interface      | Browser        |
+| README.md  | Project documentation              | N/A            |
 
 ## Installation & Setup
 
 ### Prerequisites
 
-  | Version           | Requirement            | Installation Link |
-  | ----------------- | ---------------------- | ----------------- |
-  | CLI (Recommended) | Node.js 14.x or higher | nodejs.org        |
-  | Browser           | Any modern web browser | Already installed |
+| Version           | Requirement            | Installation Link |
+| ----------------- | ---------------------- | ----------------- |
+| CLI (Recommended) | Node.js 14.x or higher | nodejs.org        |
+| Browser           | Any modern web browser | Already installed |
 
 ### Installing Node.js (For CLI Version)
 
@@ -120,20 +120,20 @@ No server setup required!
 
 ## Why CLI is Recommended
 
-  | Feature | CLI Version | Browser Version |
-  | --------- | ------------- | ----------------- |
-  | Performance | Fast, no UI blocking | Can freeze browser thread |
-  | Test scale | Unlimited | Limited by browser memory |
-  | Automation | Easy scripting | Manual interaction |
-  | Output clarity | Clean terminal output | Scrolling HTML text |
-  | Memory efficiency | Better | Higher overhead |
+| Feature           | CLI Version           | Browser Version           |
+| ----------------- | --------------------- | ------------------------- |
+| Performance       | Fast, no UI blocking  | Can freeze browser thread |
+| Test scale        | Unlimited             | Limited by browser memory |
+| Automation        | Easy scripting        | Manual interaction        |
+| Output clarity    | Clean terminal output | Scrolling HTML text       |
+| Memory efficiency | Better                | Higher overhead           |
 
 ## Configuration Reference
 
-  | Parameter             | CLI Prompt                     | Browser Input   | Default   | Recommended Range   |
-  | -----------           | ------------                   | --------------- | --------- | ------------------- |
-  | Characters per string | "How many per string"          | num-chars       | 50        | 50-1000             |
-  | Number of tests       | "How many tests per character" | num-tests       | 50        | 100-10000           |
+| Parameter             | CLI Prompt                     | Browser Input | Default | Recommended Range |
+| --------------------- | ------------------------------ | ------------- | ------- | ----------------- |
+| Characters per string | "How many per string"          | num-chars     | 50      | 50-1000           |
+| Number of tests       | "How many tests per character" | num-tests     | 50      | 100-10000         |
 
 Note: For browser version, keep test counts under 10,000 to avoid freezing.
 
@@ -141,38 +141,38 @@ Note: For browser version, keep test counts under 10,000 to avoid freezing.
 
 For a uniform random distribution across 92 ASCII characters (33-124):
 
-  | Metric                           | Value                        |
-  | -------------------------------- | ---------------------------- |
-  | Expected frequency per character | ~1.09% (1/92)                |
-  | Variance                         | Decreases with more tests    |
-  | Convergence                      | Follows law of large numbers |
+| Metric                           | Value                        |
+| -------------------------------- | ---------------------------- |
+| Expected frequency per character | ~1.09% (1/92)                |
+| Variance                         | Decreases with more tests    |
+| Convergence                      | Follows law of large numbers |
 
 ## Known Issues
 
-  | Issue                     | Impact                           | Workaround                  |
-  | -------                   | --------                         | ------------                |
-  | Browser UI blocking       | Page freezes during large tests  | Use CLI version             |
-  | Index mismatch            | Loop offset in main.js           | Expected 1.09% still holds  |
-  | Global variable shadowing | Variables overwritten in main.js | CLI avoids this issue       |
-  | No progress indicator     | Unclear completion time          | CLI shows immediate results |
+| Issue                     | Impact                           | Workaround                  |
+| ------------------------- | -------------------------------- | --------------------------- |
+| Browser UI blocking       | Page freezes during large tests  | Use CLI version             |
+| Index mismatch            | Loop offset in main.js           | Expected 1.09% still holds  |
+| Global variable shadowing | Variables overwritten in main.js | CLI avoids this issue       |
+| No progress indicator     | Unclear completion time          | CLI shows immediate results |
 
 ## Troubleshooting
 
 ### CLI Issues
 
-  | Problem                 | Solution                         |
-  | ----------------------- | -------------------------------- |
-  | node: command not found | Install Node.js from nodejs.org  |
-  | Permission denied       | chmod +x cli.js then node cli.js |
-  | Results seem wrong      | Increase test count (>1000)      |
+| Problem                 | Solution                         |
+| ----------------------- | -------------------------------- |
+| node: command not found | Install Node.js from nodejs.org  |
+| Permission denied       | chmod +x cli.js then node cli.js |
+| Results seem wrong      | Increase test count (>1000)      |
 
 ### Browser Issues
 
-  | Problem       | Solution                               |
-  | ------------- | -------------------------------------- |
-  | Page blank    | Check browser console (F12) for errors |
-  | Styles broken | Verify style.css in same directory     |
-  | UI frozen     | Reduce test count or use CLI           |
+| Problem       | Solution                               |
+| ------------- | -------------------------------------- |
+| Page blank    | Check browser console (F12) for errors |
+| Styles broken | Verify style.css in same directory     |
+| UI frozen     | Reduce test count or use CLI           |
 
 ## Potential Improvements
 
