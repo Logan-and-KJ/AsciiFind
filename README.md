@@ -1,4 +1,4 @@
-## AsciiFind
+###### AsciiFind
 
 A statistical simulation tool that calculates the approximate probability of
 specific ASCII characters appearing in randomly generated strings.
@@ -53,8 +53,8 @@ Option B: Direct Download Download from nodejs.org and install the .pkg file.
 
 #### Linux (Ubuntu/Debian)
 
-curl -fsSL <https://deb.nodesource.com/setup_18.x> \| sudo -E bash - sudo apt-get
-install -y nodejs
+curl -fsSL <https://deb.nodesource.com/setup_18.x> \| sudo -E bash - sudo
+apt-get install -y nodejs
 
 #### Linux (Arch Linux)
 
