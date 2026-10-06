@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="main.js" defer></script>
 
-    <link rel="stylesheet" href="style.css">
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>AsciiFind</title>
+		<script src="main.js" defer></script>
 
-<div id="simulation">
-        <body>
-            <h1>Approximate Value</h1>
-            <!-- <p>Logan Webb and I have conducted a simulation that proves the approximate value of how many times a certain character, out of all ASCII characters, appears in a pseudo-random string.</p> -->
-        <table>
-            <tr>
-                <td>
-                    Number of tests 
-                </td>
-                <td>
-                    <input type="number" id="num-tests" data-initialvalue="30" value="50">
-                </td>
-                <td>
-                    <button data-to="">reset</button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Number of characters per random string
-                </td>
-                <td>
-                    <input id="num-chars" type="number" data-initialvalue="30" value="50">
-                </td>
-                <td>
-                    <button>reset</button>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <!-- the following element is a button -->
-                    <button type="button" id="button" role="button">Start button</button>
-                </td>
-                <td></td>
-            </tr>
-        </table>
+		<link rel="stylesheet" href="style.css">
+	</head>
 
-        <div>
-            <hr>
-        </div>
-        <div id="console" class="mono text-left">
-            
-        </div>
-    </div>
-</body>
+	<body>
+		<div id="simulation">
+			<h1>Approximate Value</h1>
+			<!-- <p>Logan Webb and I have conducted a simulation that proves the approximate value of how many times a certain character, out of all ASCII characters, appears in a pseudo-random string.</p> -->
+			<table>
+				<tr>
+					<td>Number of tests</td>
+					<td>
+						<input type="number" id="num-tests" data-initialvalue="30" value="50">
+					</td>
+					<td>
+						<button data-to="">reset</button>
+					</td>
+				</tr>
+				<tr>
+					<td>Number of characters per random string</td>
+					<td>
+						<input id="num-chars" type="number" data-initialvalue="30" value="50">
+					</td>
+					<td>
+						<button>reset</button>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<!-- the following element is a button -->
+						<button type="button" id="button" role="button">Start button</button>
+					</td>
+					<td></td>
+				</tr>
+			</table>
+
+			<div>
+				<hr>
+			</div>
+			<div id="console" class="mono text-left"></div>
+		</div>
+	</body>
 </html>
+

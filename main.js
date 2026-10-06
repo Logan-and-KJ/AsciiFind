@@ -3,7 +3,7 @@ let numCharacters = 5000;
 let NUM_TESTS = 70000;
 let foundP = 0;
 let randChar = () => characters[Math.floor(Math.random() * characters.length)];
-let eConsole = document.getElementById("console")
+let eConsole = document.getElementById("console");
 
 document.getElementById("button").onclick = function () {
   let numCharacters = document.getElementById("num-chars").value;
@@ -12,8 +12,8 @@ document.getElementById("button").onclick = function () {
   // Build character array (ASCII 33-124)
   for (let i = 33; i < 125; i++) {
     characters.push({
-      char: String.fromCharCode(i)
-    })
+      char: String.fromCharCode(i),
+    });
   }
 
   // Test specific character range
@@ -35,31 +35,28 @@ document.getElementById("button").onclick = function () {
 
       return {
         fullCount: semiCount,
-        percent: (semiCount / numCharacters),
-        fullString: fullStr
-      }
+        percent: semiCount / numCharacters,
+        fullString: fullStr,
+      };
     }
-
 
     let totalChars = numCharacters * NUM_TESTS;
     let percentTotal = 0;
 
     for (let a = 0; a < NUM_TESTS; a++) {
       let test = semi();
-      eConsole.innerHTML += test.percent + "<br>";
       percentTotal += test.fullCount;
     }
 
     // FIXED: Average count per test divided by characters per test
     // This gives the true probability/proportion
-    foundP = (percentTotal / NUM_TESTS) / numCharacters;
+    foundP = percentTotal / NUM_TESTS / numCharacters;
     console.log("${100 * foundP}%");
-    eConsole.innerHTML += "<br" + (100 * foundP) + "%&nbsp;"
-
-
+    eConsole.innerHTML += "<br>" + 100 * foundP + "%&nbsp;";
   }
-}
 
-// Fixed final average calculation - remove redundant NUM_TESTS division
-let foundT = foundP;  // foundP is already the correct average proportion
-console.log("Avg: " + (100 * foundT) + "%");
+  // Fixed final average calculation - remove redundant NUM_TESTS division
+  let foundT = foundP; // foundP is already the correct average proportion
+  console.log("Avg: " + 100 * foundT + "%");
+  eConsole.innerHTML += "Average: " + 100 * foundT + "%";
+};
