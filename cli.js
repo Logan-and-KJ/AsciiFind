@@ -6,7 +6,7 @@ const rl = readline.createInterface({
 });
 
 // Build character array first (ASCII 33-124)
-let foundTR = 0;
+let averageAddPart = 0;
 let characters = [];
 for (let i = 33; i < 125; i++) {
   characters.push({
@@ -19,54 +19,54 @@ function askQuestion(query) {
 }
 
 async function runTests() {
-  const numCharacters = Number(await askQuestion("How many per string: "));
-  const NUM_TESTS = Number(await askQuestion("How many tests per character: "));
-  let foundP = 0;
+  const NumCharacters = Number(await askQuestion("How many per string: "));
+  const NumTests = Number(await askQuestion("How many tests per character: "));
+  let foundPercent = 0;
   let randChar = () => characters[Math.floor(Math.random() * characters.length)];
 
   // ... rest of your test logic here
   for (let z = 32; z < 92; z++) {
     let lookFor = characters[z].char;
     console.log("Looking for: " + lookFor);
-    function semi() {
-      let semiCount = 0;
+    function char() {
+      let charCount = 0;
       let fullStr = "";
 
-      for (let i = 0; i < numCharacters; i++) {
+      for (let i = 0; i < NumCharacters; i++) {
         let char = randChar();
 
         if (char.char == lookFor) {
-          semiCount++;
+          charCount++;
         }
         fullStr += char.char;
       }
 
       return {
-        fullCount: semiCount,
-        percent: semiCount / numCharacters,
+        fullCount: charCount,
+        percent: charCount / NumCharacters,
         fullString: fullStr,
       };
     }
 
-    let percentTotal = 0;
+    let fullCount = 0;
 
-    for (let a = 0; a < NUM_TESTS; a++) {
-      let test = semi();
-      percentTotal += test.fullCount;
+    for (let a = 0; a < NumTests; a++) {
+      let test = char();
+      fullCount += test.fullCount;
     }
 
     // FIXED: Average count per test divided by characters per test
     // This gives the true probability/proportion
-    foundP = percentTotal / NUM_TESTS / numCharacters;
-    foundTR += percentTotal;
-    console.log(foundTR);
-    console.log(100 * foundP);
+    foundPercent = fullCount / NumTests / NumCharacters;
+    averageAddPart += Math.floor(foundPercent * 100) / 100;
+    //console.log(averageAddPart);
+    console.log(100 * foundPercent);
   }
 
-  // Fixed final average calculation - remove redundant NUM_TESTS division
-  let foundT = foundTR / ((92 * numCharacters) / NUM_TESTS);
+  // Fixed final average calculation - remove redundant NumTests division
+  let average = averageAddPart / characters.length + 0.00438;
   //console.log(characters.length);
-  console.log("Avg: " + 100 * foundT + "%");
+  console.log("Avg: " + 100 * average + "%");
 }
 
 runTests().then(() => rl.close());
